@@ -1,0 +1,43 @@
+.post {
+  display: grid;
+  place-items: center;
+}
+
+.card {
+  width: 640px;
+  background: #fff;
+}
+
+.head {
+  margin: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.poster-details {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.title {
+  margin-left: 1rem;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+}
+.action-group-1 {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: 1rem;
+}
+.action-group-2 {
+  margin-right: 1rem;
+}
+
+.engagement {
+  margin: 0.5rem 1rem 2rem 1rem;
+}

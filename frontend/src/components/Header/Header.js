@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { getProfileInfo } from "../data/profile.js";
+import { getProfileInfo } from "../../data/profile.js";
 import "./Header.css";
 
 function Header() {
-  const { userid, name, logo } = getProfileInfo();
+  const { userid, name, dp } = getProfileInfo();
 
   return (
     <div className="header">
@@ -25,7 +25,7 @@ function Header() {
       </div>
       <div className="profile">
         <div>{name}</div>
-        <img src={logo} alt="profile image" />
+        <img src={dp} alt="profile image" />
       </div>
     </div>
   );
