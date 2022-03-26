@@ -25,3 +25,20 @@
 .profile > div {
   margin-right: 0.5rem;
 }
+
+.popover {
+  width: 210px;
+  position: absolute;
+  top: 48px;
+  right: 0;
+}
+.popover-item {
+  margin: 0;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  background-color: #fff;
+}
+.popover-item::hover {
+  background-color: #f8f6ff;
+}

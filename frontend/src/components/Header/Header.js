@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { getProfileInfo } from "../../data/profile.js";
 import "./Header.css";
+import Popover from "./Popover.js";
 
 function Header() {
   const { userid, name, dp } = getProfileInfo();
+  const [openMenu, setOpenMenu] = useState(false);
 
   return (
     <div className="header">
@@ -23,10 +25,11 @@ function Header() {
           <img src="/images/profile.png" alt="logo" width={24} />
         </Link>
       </div>
-      <div className="profile">
+      <div className="profile" onClick={() => setOpenMenu(!openMenu)}>
         <div>{name}</div>
         <img src={dp} alt="profile image" />
       </div>
+      {openMenu && <Popover />}
     </div>
   );
 }

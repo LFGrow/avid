@@ -1,0 +1,18 @@
+.container {
+  display: grid;
+  place-items: center;
+}
+
+.profile {
+  width: 640px;
+  background: #fff;
+}
+
+.user-info {
+  display: grid;
+  grid-column: 1fr 2fr;
+  grid-row: 1fr 1fr 1fr;
+}
+.dp {
+  grid-row: 1/3;
+}
