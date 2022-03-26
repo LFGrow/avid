@@ -1,4 +1,4 @@
 export function getProfileInfo() {
   //TODO: apollo query
-  return { name: "vitalik", logo: "logo-uri" };
+  return { userid: "123", name: "vitalik", logo: "logo-uri" };
 }

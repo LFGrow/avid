@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { getProfileInfo } from "../data/profile.js";
 import "./Header.css";
 
 function Header() {
-  const { name, logo } = getProfileInfo();
+  const { userid, name, logo } = getProfileInfo();
 
   return (
     <div className="header">
@@ -12,9 +13,15 @@ function Header() {
         <input className="search" type="search" placeholder="Search"></input>
       </div>
       <div className="icons">
-        <img src="./images/home.png" alt="logo" width={24} />
-        <img src="./images/create-post.png" alt="logo" width={24} />
-        <img src="./images/profile.png" alt="logo" width={24} />
+        <Link to="/">
+          <img src="./images/home.png" alt="logo" width={24} />
+        </Link>
+        <Link to={`/${userid}/create-post`}>
+          <img src="./images/create-post.png" alt="logo" width={24} />
+        </Link>
+        <Link to={`/${userid}`}>
+          <img src="./images/profile.png" alt="logo" width={24} />
+        </Link>
       </div>
       <div className="profile">
         <div>{name}</div>

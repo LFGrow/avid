@@ -8,10 +8,8 @@
   display: grid;
   place-items: center;
 }
-.search {
-}
 
-.icons > img {
+.icons > * > img {
   margin-right: 1rem;
 }
 
