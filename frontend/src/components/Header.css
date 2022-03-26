@@ -1,0 +1,24 @@
+.header {
+  display: flex;
+  background: #dcd5ff;
+}
+
+.searchbar {
+  flex-grow: 1;
+  display: grid;
+  place-items: center;
+}
+.search {
+}
+
+.icons > img {
+  margin-right: 1rem;
+}
+
+.profile {
+  margin-left: 1rem;
+  display: flex;
+}
+.profile > div {
+  margin-right: 0.5rem;
+}
