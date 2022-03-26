@@ -1,0 +1,6 @@
+.videoCard {
+	margin: 0.7vw;
+}
+.videoCard video{
+	width: 240px;
+}

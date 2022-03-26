@@ -1,6 +1,7 @@
 .post {
   display: grid;
   place-items: center;
+  margin: 1vw;
 }
 
 .card {
@@ -39,7 +40,8 @@
 }
 
 .engagement {
-  margin: 0.5rem 1rem 2rem 1rem;
+  margin: 0.5vw 1rem 2rem 1rem;
+  line-height: 1.5vw;
 }
 
 .post-button {

@@ -1,0 +1,76 @@
+.signupContainer {
+	background-image: url("gradient.svg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100vw;
+	height: 100vh;
+}
+label {
+	background-color: #dcd5ff;
+	padding: 0.5rem;
+	font-family: sans-serif;
+	border-radius: 0.3rem;
+	cursor: pointer;
+	margin-top: 1rem;
+	margin-left: 1rem;
+}
+
+label:hover {
+	background-color: #857fef;
+	color: white;
+}
+
+#file-chosen {
+	margin-left: 0.3rem;
+	font-family: sans-serif;
+}
+
+.signupForm {
+	width: 30%;
+	margin: 4vw auto;
+	background-color: #efebfb;
+	padding: 2vw;
+	box-shadow: 5px 1px #92739c17;
+}
+
+.avatarImage {
+	margin: 1vw 1.2vw;
+	width: 7vw;
+	height: 7vw;
+	border: 3px solid #9f91e7;
+	border-radius: 50%;
+	display: block;
+}
+
+.inputText {
+	margin: 0.7vw;
+	width: 90%;
+	height: 1.5vw;
+	border-radius: 5px;
+	border: 1.5px solid grey;
+	padding: 0.2vw 0.7vw;
+	font-size: 1vw;
+}
+.inputSubmit {
+	background: #857fef;
+	border-radius: 5px;
+	border: 1px solid #ffffff;
+	color: #ffffff;
+	width: 96%;
+	height: 2.7vw;
+	margin: 1.4vw 0.7vw;
+	cursor: pointer;
+
+	font-family: "Readex Pro", sans-serif;
+	font-weight: bold;
+	font-size: 1.1vw;
+	letter-spacing: 0.02em;
+	margin-bottom: 0;
+	color: #ffffff;
+}
+
+.inputSubmit:hover {
+	background: #ffffff;
+	border: 1px solid #857fef;
+	color: #857fef;
+}
