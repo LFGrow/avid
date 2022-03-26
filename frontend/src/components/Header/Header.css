@@ -9,6 +9,10 @@
   place-items: center;
 }
 
+.icons {
+  display: flex;
+  align-items: center;
+}
 .icons > * > img {
   margin-right: 1rem;
 }
@@ -16,6 +20,7 @@
 .profile {
   margin-left: 1rem;
   display: flex;
+  align-items: center;
 }
 .profile > div {
   margin-right: 0.5rem;
