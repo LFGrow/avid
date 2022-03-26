@@ -15,10 +15,10 @@ function App() {
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<Signup />} />
         <Route path="post">
-          <Route path=":postid" element={<Post />} />
+          <Route path=":postId" element={<Post />} />
           <Route path="create" element={<CreatePost />} />
         </Route>
-        <Route path=":userid" element={<Profile />} />
+        <Route path=":userId" element={<Profile />} />
         <Route path="edit-profile" element={<EditProfile />} />
       </Routes>
     </BrowserRouter>
