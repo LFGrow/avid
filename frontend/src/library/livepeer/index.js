@@ -145,16 +145,22 @@ export const convertAssetToNFT = async (
 	name,
 	description,
 	thumbnail,
-	creator
+	creator,
+	downloadUrl
 ) => {
 	const thumbHash = await upload(thumbnail);
 	const nftMetadata = {
+		version: "1.0.0",
 		name: name,
+		metadata_id: assetID,
 		description: description,
 		image: `ipfs://${thumbHash}`,
+		imageMimeType: "image/png",
 		properties: {
 			creator: creator,
 		},
+		media: [{ item: downloadUrl, type: "video/mp4" }],
+		attributes: [],
 	};
 	console.log(JSON.stringify(nftMetadata));
 
@@ -200,7 +206,8 @@ export const uploadVideo = async (
 		name,
 		description,
 		thumb,
-		creatorId
+		creatorId,
+		res.downloadUrl
 	);
 	status = "progressing";
 	while (status !== "completed" && status !== "failed") {

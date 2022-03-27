@@ -1,0 +1,74 @@
+.sideBarContainer {
+	width: 22%;
+	background-color: white;
+	position: fixed;
+	z-index: 0; /* Stay on top */
+	top: 0; /* Stay at the top */
+	right: 0.05vw;
+	overflow-x: hidden;
+	min-height: 100vh;
+	font-family: "Readex Pro", sans-serif;
+	padding-left: 1.4vw;
+}
+
+.currentUser {
+	margin-top: 7vw;
+	display: flex;
+}
+
+.sidebarDetails {
+	margin-top: 0.3vw;
+	line-height: 1.9vw;
+	margin-left: 0.5vw;
+}
+
+.sidebarDp {
+	width: 4vw;
+	border-radius: 50%;
+	margin: 0 1vw;
+}
+
+.sidebarName {
+	font-size: 1.2vw;
+	font-weight: 550;
+	color: #8e8e8e;
+}
+
+.sidebarHandle {
+	font-size: 1.2vw;
+}
+
+.suggestionLabel {
+	color: #8e8e8e;
+	font-size: 1.3vw;
+	margin: 2vw 1vw;
+}
+
+.suggestion {
+	display: flex;
+	justify-content: space-between;
+	width: 90%;
+	margin: 1vw auto;
+}
+
+.suggestionDpName {
+	display: flex;
+}
+
+.suggestionDp {
+	width: 3vw;
+	border-radius: 50%;
+	margin-right: 1.7vw;
+}
+
+.suggestionHandle {
+    margin-top: 0.7vw;
+    font-weight: 600;
+    font-size: 1.1vw;
+}
+
+.suggestionFollow {
+     margin-top: 0.7vw;
+     color: #0095F6;
+     cursor: pointer;
+}

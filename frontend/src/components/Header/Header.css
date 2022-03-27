@@ -1,7 +1,11 @@
 .header {
 	display: flex;
 	background: #dcd5ff;
-  height: 3.4vw;
+	height: 3.4vw;
+	z-index: 1;
+	position: fixed;
+	min-width: 100vw;
+	top: 0;
 }
 
 .searchbar {
@@ -10,10 +14,10 @@
 	place-items: center;
 }
 
-.search{
-    width: 20vw;
-    height: 2vw;
-    padding: 1vw;
+.search {
+	width: 20vw;
+	height: 2vw;
+	padding: 1vw;
 }
 
 .icons {
@@ -26,7 +30,7 @@
 
 .profile {
 	margin-left: 1rem;
-  margin-right: 1rem;
+	margin-right: 1rem;
 	display: flex;
 	align-items: center;
 	border-radius: 50%;
@@ -45,22 +49,23 @@
 .popover-item {
 	margin: 0;
 	height: 64px;
-	display: block;
+	display: grid;
 	place-items: center;
-	background-color: #fff;
+	background-color: rgb(255, 255, 255);
 	cursor: pointer;
 }
 .popover-item:hover {
-	background-color: #dcd5ff5b;
+	background-color: #dcd5ff;
 	border-left: 0.3vw solid #857fef;
 }
 
 .headerAvatar {
 	border-radius: 50%;
-  width: 2.5vw;
-  cursor: pointer;
+	width: 2.5vw;
+	height: 2.5vw;
+	cursor: pointer;
 }
 
-.brandLogo{
-  margin-top: 0.4vw
+.brandLogo {
+	margin-top: 0.4vw;
 }

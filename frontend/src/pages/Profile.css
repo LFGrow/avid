@@ -1,4 +1,4 @@
-.profileContainer {
+npm install localforage.profileContainer {
 	background-color: #dcd5ff5b;
 	width: 100vw;
 	min-height: 100vh;
@@ -8,7 +8,7 @@
 	width: 55%;
 	background: #fff;
 	margin: 0 auto;
-	padding: 5vw 2vw 2vw 2vw;
+	padding: 7vw 2vw 2vw 2vw;
 }
 
 .user-info {
@@ -22,6 +22,8 @@
 	margin-left: 1.4vw;
 	z-index: 1;
 	position: relative;
+	width: 9vw;
+	height: 9vw;
 }
 
 .stats {
@@ -37,7 +39,7 @@
 
 .username-follow {
 	display: flex;
-	width: 40%;
+	width: 60%;
 	justify-content: space-between;
 	margin-top: 1vw;
 	font-size: 1.7vw;

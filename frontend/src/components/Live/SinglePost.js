@@ -1,20 +1,36 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { postComment } from "../../data/post";
 import "./SinglePost.css";
 import { getPublication } from "../../library/lens";
+import localforage from "localforage";
+import videojs from "video.js";
+import { VideoPlayer } from "./videos";
 
-function SinglePost({ id }) {
+function Live({ id }) {
 	const [post, setPost] = useState(undefined);
-
+	const [profile, setProfile] = useState({
+		id: "12232",
+		name: "",
+		picture: {
+			original: {
+				url: "ipfs://QmQT8FrcCGLecUouhxXJKUVLyNQh8qHpvBjKKDbc2UhEMw",
+			},
+		},
+	});
+	const [tokens, setTokens] = useState(undefined);
+	const navigate = useNavigate();
 	useEffect(() => {
-		console.log("fdsfdf", id);
-		getPublication(id).then((data) => {
-			setPost(data);
+		console.log("here");
+		localforage.getItem("profile").then((data) => {
+			if (data === undefined) {
+				navigate("/");
+			}
+			console.log(data);
+			setProfile(data);
 		});
-	}, [id]);
-	console.log(post);
-	if (post === undefined) {
+	}, []);
+	if (profile === undefined) {
 		return <div className="emptyPost"></div>;
 	}
 	return (
@@ -25,34 +41,24 @@ function SinglePost({ id }) {
 					<div className="poster-details">
 						<img
 							className="headerAvatar"
-							src={`https://ipfs.infura.io/ipfs/${post.profile.picture.original.url.replace(
+							src={`https://ipfs.infura.io/ipfs/${profile.picture.original.url.replace(
 								"ipfs://",
 								""
 							)}`}
 							alt="profile image"
 						/>
-						<div>{post.profile.handle}</div>
+						<div>{profile.handle}</div>
 					</div>
 					<img src="/images/menu.png" alt="menu" />
 				</div>
-
 				{/* Post */}
-				{post.metadata.media[0].original.mimeType.includes("video") ? (
-					<video width="640" height="360" controls>
-						<source
-							src={`${post.metadata.media[0].original.url}#t=0.1`}
-							type="video/mp4"
-						></source>
-					</video>
-				) : (
-					<img
-						src={post.metadata.media[0].original.url}
-						alt="post"
-						width="640"
-						height="360"
-					/>
-				)}
-
+				<video width="640" height="360" controls>
+					<source
+						src={`https://cdn.livepeer.com/recordings/${id}/source.mp4#t=0.1`}
+						type="video/mp4"
+					></source>
+				</video>
+				<VideoPlayer/>
 				{/* Actions */}
 				<div className="actions">
 					<div className="action-group-1">
@@ -65,12 +71,8 @@ function SinglePost({ id }) {
 					</div>
 				</div>
 				<div className="engagement">
-					<div className="like-count">
-						{post.stats.totalAmountOfCollects} collects
-					</div>
-					<div className="top-comment">
-						{post.metadata.description}
-					</div>
+					<div className="like-count">0 collects</div>
+					<div className="top-comment">Live Stream</div>
 					<div>
 						<Link to={`/post/${id}`}>View all 0 comments</Link>
 					</div>
@@ -93,4 +95,4 @@ function SinglePost({ id }) {
 	);
 }
 
-export default SinglePost;
+export default Live;

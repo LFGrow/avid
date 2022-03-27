@@ -1,0 +1,13 @@
+.postContainer {
+	background-color: #dcd5ff5b;
+	width: 100vw;
+	min-height: 100vh;
+	margin-top: 3vw;
+	padding-top: 1vw;
+}
+
+.postContent{
+	display: felx;
+	padding-right: 7vw;
+}
+

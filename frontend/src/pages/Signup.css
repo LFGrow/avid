@@ -3,7 +3,10 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	width: 100vw;
-	height: 100vh;
+	min-height: 100vh;
+	margin-top: -1vw;
+	margin-bottom: -1vw;
+	padding-top: 5vw;
 }
 label {
 	background-color: #dcd5ff;

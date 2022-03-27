@@ -1,23 +1,45 @@
 import React from "react";
 import "./Login.css";
 import avid from "./avid.svg";
-import { connectWalletAndSign } from "../library/web3";
+import { connectWallet, signMessage } from "../library/web3";
+import {
+	checkProfileExists,
+	getChallenge,
+	getProfiles,
+	getTokens,
+} from "../library/lens";
+import localForage from "localforage";
+import { useNavigate } from "react-router-dom";
+
 function Login() {
+	const navigate = useNavigate();
 	const login = async () => {
-		const data = await connectWalletAndSign("test message");
+		const data = await connectWallet();
+		const challenge = await getChallenge(data.address);
+		console.log(challenge);
+		const resp = await signMessage(data.provider, challenge);
+		const tokens = await getTokens(data.address, resp);
+		console.log(tokens);
+		await localForage.setItem("userAddress", data.address);
+		await localForage.setItem("tokens", tokens);
+		const profile = await checkProfileExists(data.address);
+		if (profile === undefined) {
+			navigate("/signup");
+		} else {
+			localForage.setItem("profile", profile);
+			navigate("/feed");
+		}
 	};
 
 	return (
 		<div className="loginContainer">
 			<div className="branding">
 				<img className="logo" src={avid} />
-				<h2 className="branding1">
-					Web3 Native Instagram for Creators
-				</h2>
+				<h2 className="branding1">The future of creative ownership</h2>
 				<h2 className="branding2">
-					Own your content.
-					<br /> Login with Web3, get paid and use decentralized
-					storage.
+					Join us! <br />
+					Be part of the open ecosystem <br />
+					Build your brand, share and invest in Web3
 				</h2>
 			</div>
 			<div className="connect">
